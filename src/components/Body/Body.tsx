@@ -10,8 +10,8 @@ export const Body = (): JSX.Element => {
 	}, [setTimer, timer]);
 
 	return (
-		<div onClick={increaseTimer} role="button" className="body">
-			Food
+		<div className="body">
+			<button onClick={increaseTimer}>Food</button>
 		</div>
 	);
 };

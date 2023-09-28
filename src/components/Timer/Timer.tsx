@@ -15,5 +15,6 @@ export const Timer = (): JSX.Element => {
 
 		return () => clearInterval(timerReducer);
 	}, [setTimer, timer]);
+
 	return <div>{timer / 1000}</div>;
 };

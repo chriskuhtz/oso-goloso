@@ -2,11 +2,11 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-}
-
-.app {
 	background-color: black;
 	color: white;
+}
+
+.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: stretch;
@@ -25,4 +25,16 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-weight: bolder;
+	font-size: larger;
+}
+
+button {
+	border: 2px solid white;
+	font-weight: bolder;
+	font-size: larger;
+	background-color: black;
+	color: white;
+	padding: 1rem 2rem;
+	border-radius: 1rem;
 }

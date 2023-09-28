@@ -1,15 +1,27 @@
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import { GameBody } from './components/GameBody/GameBody';
 import { GameHeader } from './components/GameHeader/GameHeader';
 import { useHandleTimerEnd } from './hooks/useHandleTimerEnd';
+import { nextChoicesAtom, nextFoodAtom } from './store/nextFoodsAtom';
 import { routerAtom } from './store/routerAtom';
+import { scoreAtom } from './store/scoreAtom';
+import { timerAtom } from './store/timerAtom';
+import { MenuScreen } from './components/MenuScreen/MenuScreen';
 
 function App() {
 	const [router, setRouter] = useRecoilState(routerAtom);
-
+	const resetFood = useResetRecoilState(nextFoodAtom);
+	const resetChoices = useResetRecoilState(nextChoicesAtom);
+	const resetTimer = useResetRecoilState(timerAtom);
+	const resetScore = useResetRecoilState(scoreAtom);
+	const score = useRecoilValue(scoreAtom);
 	useHandleTimerEnd();
 
 	const gotoGame = () => {
+		resetChoices();
+		resetFood();
+		resetTimer();
+		resetScore();
 		setRouter('GAME');
 	};
 
@@ -23,23 +35,22 @@ function App() {
 	}
 	if (router === 'GAME_OVER') {
 		return (
-			<div className="container">
-				<div className="header"> game over :(</div>
-				<div className="body">
-					<button onClick={gotoGame}>Play Again</button>
-				</div>
-			</div>
+			<MenuScreen
+				title="GAME OVER"
+				dialogue={`Congrats, you got ${score} Points`}
+				buttonText="Play Again"
+				onClick={gotoGame}
+			/>
 		);
 	}
 
 	return (
-		<div className="container">
-			<div className="header">Feed the Bear</div>
-			<div className="body">
-				{' '}
-				<button onClick={gotoGame}>Play</button>
-			</div>
-		</div>
+		<MenuScreen
+			title="OSO GOLOSO"
+			dialogue={`Always pick the food the bear wants and dont run out of time!`}
+			buttonText="Play"
+			onClick={gotoGame}
+		/>
 	);
 }
 

@@ -19,6 +19,11 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+.choices {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
 
 .header {
 	padding: 1rem;
@@ -37,4 +42,13 @@ button {
 	color: white;
 	padding: 1rem 2rem;
 	border-radius: 1rem;
+}
+
+.dialogueAndButton {
+	padding: 0 1rem;
+	text-align: center;
+}
+
+.nextFood {
+	color: gold;
 }

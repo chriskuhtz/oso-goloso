@@ -52,3 +52,12 @@ button {
 .nextFood {
 	color: gold;
 }
+
+.timer {
+	color: green;
+	font-size: larger;
+}
+.lowTimer {
+	color: red;
+	font-size: larger;
+}

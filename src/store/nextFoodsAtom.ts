@@ -10,6 +10,12 @@ export const foods = [
 	'Peppers',
 	'Carrots',
 	'Taters',
+	'Spaghetti',
+	'Tomatoes',
+	'Gummy Worms',
+	'Cookies',
+	'Sandwiches',
+	'Burgers',
 ] as const;
 export type Food = (typeof foods)[number];
 

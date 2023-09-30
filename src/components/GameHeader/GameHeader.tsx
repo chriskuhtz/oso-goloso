@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { nextFoodAtom } from '../../store/nextFoodsAtom';
 import { scoreAtom } from '../../store/scoreAtom';
+import { FoodIcon } from '../FoodIcon/FoodIcon';
 import { Timer } from '../Timer/Timer';
 
 export const GameHeader = (): JSX.Element => {
@@ -9,7 +10,7 @@ export const GameHeader = (): JSX.Element => {
 	return (
 		<div className="header">
 			<Timer />
-			<div className="nextFood">{nextChoice}</div>
+			<FoodIcon food={nextChoice} />
 			<div>{score}</div>
 		</div>
 	);

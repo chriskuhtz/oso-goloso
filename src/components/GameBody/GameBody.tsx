@@ -8,6 +8,7 @@ import {
 } from '../../store/nextFoodsAtom';
 import { scoreAtom } from '../../store/scoreAtom';
 import { timerAtom } from '../../store/timerAtom';
+import { FoodIcon } from '../FoodIcon/FoodIcon';
 
 export const GameBody = (): JSX.Element => {
 	const [timer, setTimer] = useRecoilState(timerAtom);
@@ -37,12 +38,10 @@ export const GameBody = (): JSX.Element => {
 				{nextChoices.map((c) => {
 					if (c === nextFood) {
 						return (
-							<button key={c} onClick={handleClickOnCorrectTile}>
-								{c}
-							</button>
+							<FoodIcon key={c} onClick={handleClickOnCorrectTile} food={c} />
 						);
 					}
-					return <button key={c}>{c}</button>;
+					return <FoodIcon food={c} />;
 				})}
 			</div>
 		</div>

@@ -1,12 +1,12 @@
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import { GameBody } from './components/GameBody/GameBody';
 import { GameHeader } from './components/GameHeader/GameHeader';
+import { MenuScreen } from './components/MenuScreen/MenuScreen';
 import { useHandleTimerEnd } from './hooks/useHandleTimerEnd';
 import { nextChoicesAtom, nextFoodAtom } from './store/nextFoodsAtom';
 import { routerAtom } from './store/routerAtom';
 import { scoreAtom } from './store/scoreAtom';
 import { timerAtom } from './store/timerAtom';
-import { MenuScreen } from './components/MenuScreen/MenuScreen';
 
 function App() {
 	const [router, setRouter] = useRecoilState(routerAtom);

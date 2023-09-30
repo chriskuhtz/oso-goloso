@@ -18,7 +18,7 @@ export const Timer = (): JSX.Element => {
 
 	return (
 		<div className={timer < 3000 ? 'lowTimer' : 'timer'}>
-			{(timer / 1000).toFixed(1)}
+			{(timer / 1000).toFixed(timer >= 10000 ? 1 : 2)}
 		</div>
 	);
 };
